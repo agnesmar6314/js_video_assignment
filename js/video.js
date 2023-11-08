@@ -1,8 +1,8 @@
-var video = document.querySelector("video");
+var video = document.querySelector("#player1");
 
 // page load
 window.addEventListener("load", function() {
-	console.log("Good job opening the window")
+	console.log("Good job opening the window");
 	video.autoplay = false;
 	video.loop = false;
 
@@ -13,8 +13,8 @@ window.addEventListener("load", function() {
  document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
-	document.querySelector("volume").innerHTML = video.volume * 100 + "%";
-	console.log("The video volume is" + video.volume)
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
+	console.log("The video volume is " + video.volume);
 
  });
 
@@ -27,14 +27,14 @@ window.addEventListener("load", function() {
 
 // slow down 
 document.querySelector("#slower").addEventListener("click", function() {
-	   video.PlaybackRate *= 0.9;
-	   console.log("Slow down speed is" + video.PlaybackRate);
+	   video.playbackRate *= 0.9;
+	   console.log("Slow down speed is " + video.playbackRate);
 });
 
 // speed up 
 document.querySelector("#faster").addEventListener("click", function() {
-	   video.PlaybackRate /= 0.9;
-	   console.log("Sped up speed is" + video.PlaybackRate);
+	   video.playbackRate /= 0.9;
+	   console.log("Sped up speed is " + video.playbackRate);
 });
 
 // skip ahead 
@@ -45,7 +45,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 	}
 	console.log("Skip Ahead");
 
-
+});
 
 // mute 
 
@@ -64,24 +64,22 @@ document.querySelector("#mute").addEventListener("click", function() {
 // volume slider
 document.querySelector("#slider").addEventListener("input", function() {
 	video.volume = this.value/100;
-	document.querySelector("volume").innerHTML = video.volume * 100 + "%";
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 
 });
 
 
 // styled 
 document.querySelector("#vintage").addEventListener("click", function() {
-	console.log("Old School!");
-	video.classList.add ("oldSchool");
+	console.log("Add Old School!");
+	video.classList.add("oldSchool");
 	
 
 
 });
 
 // original 
-
-document.querySelector("#vintage").addEventListener("click", function() {
-	console.log("Old School!");
-	video.classList.remove ("oldSchool");
-
+document.querySelector("#orig").addEventListener("click", function() {
+	console.log("Remove Old School!");
+	video.classList.remove("oldSchool");
 });
